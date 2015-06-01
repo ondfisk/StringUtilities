@@ -1,8 +1,12 @@
-USE [<database>]
+USE Test
 GO
 
 IF EXISTS (SELECT * FROM sys.objects WHERE name = N'Split' and (type = 'FS' or type = 'FT'))  
 DROP FUNCTION [Split];
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE name = N'SplitBy' and (type = 'FS' or type = 'FT'))  
+DROP FUNCTION [SplitBy];
 GO
 
 IF EXISTS (SELECT * from sys.objects WHERE name = N'Concatenate' and (type = 'AF'))  

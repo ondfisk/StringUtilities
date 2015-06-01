@@ -1,8 +1,12 @@
-USE [<database>]
+USE Test
 GO
 
 -- Invoke the tvf
 SELECT * FROM dbo.Split('will,this,work');
+GO
+
+-- Invoke the tvf
+SELECT * FROM dbo.SplitBy('will;this;work', ';');
 GO
 
 -- Invoke the aggregate over the results of the tvf
